@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
 		else if (strcmp(argv[2], "F") == 0) {
               		fahrenheit(temp);
 		}
-		if (strcmp(argv[2], "K") == 0) {
+		else if (strcmp(argv[2], "K") == 0) {
               		kelvin(temp);
 		}
 	}
