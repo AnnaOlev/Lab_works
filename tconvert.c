@@ -8,8 +8,7 @@ int fahrenheit(float x)
 	if (x<-459.67) {
 		printf("Are you sure?\n");
 	}
-	else 
-	{
+	else {
 		t1=(x-32)/1.8;
 		t2=(x+459.67)/1.8;
 		printf("%.2f C\n",t1);
@@ -23,8 +22,7 @@ int celsius(float x)
 	if (x<-273.15) {
 		printf("Are you sure?\n");
 	}
-	else
-	{
+	else {
 		t1=x*1.8+32;
 		t2=x+273.15;
 		printf("%.2f F\n",t1);
@@ -39,8 +37,7 @@ int kelvin(float x)
 	if (x<0) {
 		printf("Are you sure?\n");
 	}
-	else
-	{
+	else {
 		t1=x*1.8-459.67;
 		t2=x-273.15;
 		printf("%.2f F\n",t1);
@@ -51,8 +48,7 @@ int kelvin(float x)
 int main(int argc, char *argv[])
 {
 	float temp = atof(argv[1]);
-	if (argc==2)
-	{
+	if (argc==2) {
 		printf("%.2f F:\n",temp);
 		fahrenheit(temp);
 		printf("%.2f C:\n",temp);
@@ -60,8 +56,7 @@ int main(int argc, char *argv[])
 		printf("%.2f K:\n",temp);
 		kelvin(temp);
 	}
-	else if (argc==3)
-	{
+	else if (argc==3) {
 		if (strcmp(argv[2], "C") == 0) {
               		celsius(temp);
 		}
