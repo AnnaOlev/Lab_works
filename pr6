@@ -1,0 +1,51 @@
+public class Student {
+
+    String name;
+    int iDNumber;
+
+    public Student (String name, int iDNumber){
+        this.name = name;
+        this.iDNumber = iDNumber;
+    }
+
+    public String toString(){
+        return this.name + " " + this.iDNumber;
+    }
+}
+import java.util.Random;
+
+public class Tester {
+
+    public Random generator = new Random();
+
+    public void main(String[] args){
+
+        Student [] group = new Student[0];
+        String [] names = {"Anna", "John", "Ivan", "Kate","Tom","Jeanne","Elena", "Maria", "David", "Arthur" };
+
+        for (int i = 0; i < 10; i++){
+            String tname = names[generator.nextInt(10)];
+            group[i] = new Student(tname, generator.nextInt(40));
+        }
+        sort (group);
+        for (int i = 0; i < 10; i++)
+            System.out.println(group[i]);
+    }
+
+    public void sort (Student [] group) {
+        int i, j;
+
+        for (i = 0; group.length - 1 > i; i++) {
+            for (j = 0; j < group.length-i-1; j++){
+                if (group[j].iDNumber > group[j+1].iDNumber)
+                    swap (group[j], group[j+1]);
+            }
+        }
+    }
+
+    void swap ( Student x, Student y){
+        Student temp = x;
+        x = y;
+        y = temp;
+    }
+}
